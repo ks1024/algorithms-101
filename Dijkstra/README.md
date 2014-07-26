@@ -32,7 +32,7 @@ end function
 
 ## Example
 
-[img](https://github.com/yankuangshi/algorithms-training/blob/master/Dijkstra/dijkstra_example.png)
+[img](https://raw.github.com/yankuangshi/algorithms-training/master/Dijkstra/dijkstra_example.png)
 
 G is the source node.
 
@@ -48,16 +48,16 @@ G is the source node.
 |7|G,H,F,B,E,A,D,C|-|-|-|-|-|-|-|
 
 
-| |A  |B  |C  |D  |E  |F  |G  |H  |
+|d|A  |B  |C  |D  |E  |F  |G  |H  |
 |-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |d|10|6|16|12|6|4|0|3|
 
 
-| |A  |B  |C  |D  |E  |F  |G  |H  |
+|p|A  |B  |C  |D  |E  |F  |G  |H  |
 |-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |p|B|H|B|E|G|G|G|G|
 
-[img](https://github.com/yankuangshi/algorithms-training/blob/master/Dijkstra/dijkstra_result.png)
+[img](https://raw.github.com/yankuangshi/algorithms-training/master/Dijkstra/dijkstra_result.png)
 
 
 
