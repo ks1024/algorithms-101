@@ -32,7 +32,7 @@ end function
 
 ## Example
 
-[img](https://raw.github.com/yankuangshi/algorithms-training/master/Dijkstra/dijkstra_example.png)
+![img](https://raw.github.com/yankuangshi/algorithms-training/master/Dijkstra/dijkstra_example.png)
 
 G is the source node.
 
@@ -59,7 +59,7 @@ final previous node table :
 |---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |p|B|H|B|E|G|G|G|G|
 
-[img](https://raw.github.com/yankuangshi/algorithms-training/master/Dijkstra/dijkstra_result.png)
+![img](https://raw.github.com/yankuangshi/algorithms-training/master/Dijkstra/dijkstra_result.png)
 
 
 
