@@ -51,13 +51,13 @@ final distance table :
 
 |d|A|B|C|D|E|F|G|H|
 |---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|d|10|6|16|12|6|4|0|3|
+|d|10|6|15|12|6|4|0|3|
 
 final previous node table : 
 
 |p|A|B|C|D|E|F|G|H|
 |---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|p|B|H|B|E|G|G|G|G|
+|p|B|H|D|E|G|G|-|G|
 
 ![img](https://raw.github.com/yankuangshi/algorithms-training/master/Dijkstra/dijkstra_result.png)
 
