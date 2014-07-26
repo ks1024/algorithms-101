@@ -47,14 +47,16 @@ G is the source node.
 |6|G,H,F,B,E,A,D|-|-|**16,B**|-|-|-|-|
 |7|G,H,F,B,E,A,D,C|-|-|-|-|-|-|-|
 
+final distance table :
 
-|d|A  |B  |C  |D  |E  |F  |G  |H  |
-|-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|d|A|B|C|D|E|F|G|H|
+|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |d|10|6|16|12|6|4|0|3|
 
+final previous node table : 
 
-|p|A  |B  |C  |D  |E  |F  |G  |H  |
-|-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|p|A|B|C|D|E|F|G|H|
+|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |p|B|H|B|E|G|G|G|G|
 
 [img](https://raw.github.com/yankuangshi/algorithms-training/master/Dijkstra/dijkstra_result.png)
