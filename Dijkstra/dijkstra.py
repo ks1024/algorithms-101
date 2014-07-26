@@ -4,12 +4,12 @@ from collections import defaultdict
 class Graph:
 
     def __init__(self):
-        self.nodes = set()
+        self.nodes = []
         self.edges = defaultdict(list)
         self.distances = {}
 
     def add_node(self, node):
-        self.nodes.add(node)
+        self.nodes.append(node)
 
     def add_edge(self, edge, distance):
         node1 = list(edge)[0]
@@ -20,7 +20,8 @@ class Graph:
         self.distances[(node2, node1)] = distance
 
 def dijkstra(G, s):
-    """Dijkstra algorithm:
+    """Dijkstra algorithm
+
     function Dijkstra(Graph, source)
         dist[source] := 0
         for each vertex in Graph:
@@ -46,28 +47,46 @@ def dijkstra(G, s):
         return dist[], previous[]
     end function
     """
+    
+    d = {v: float('inf') for v in G.nodes}
+    p = {v: None for v in G.nodes}
+    d[s] = 0
+   
+    Q = set(G.nodes)
+    while Q:
+        u = min(Q, key=lambda x: d[x])
+        Q = Q - {u}
+        for v in G.edges[u]:
+            if d[v] > d[u] + G.distances[(u, v)]:
+                d[v] = d[u] + G.distances[(u, v)]
+                p[v] = u
 
-graph = Graph()
-nodes = 'ABCDEFGH'
-for n in nodes:
-    graph.add_node(n)
+    return d, p
 
-graph.add_edge('AB', 4)
-graph.add_edge('BC', 10)
-graph.add_edge('CD', 3)
-graph.add_edge('DE', 6)
-graph.add_edge('EF', 7)
-graph.add_edge('FA', 8)
-graph.add_edge('BF', 9)
-graph.add_edge('BG', 7)
-graph.add_edge('BH', 3)
-graph.add_edge('BD', 12)
-graph.add_edge('FG', 4)
-graph.add_edge('GH', 3)
-graph.add_edge('HD', 10)
-graph.add_edge('GE', 6)
-graph.add_edge('HE', 3)
+if __name__ == '__main__':
+    graph = Graph()
+    nodes = 'ABCDEFGH'
+    for n in nodes:
+        graph.add_node(n)
 
-print graph.nodes
-print graph.edges.items()
-print graph.distances
+    graph.add_edge('AB', 4)
+    graph.add_edge('BC', 10)
+    graph.add_edge('CD', 3)
+    graph.add_edge('DE', 6)
+    graph.add_edge('EF', 7)
+    graph.add_edge('FA', 8)
+    graph.add_edge('BF', 9)
+    graph.add_edge('BG', 7)
+    graph.add_edge('BH', 3)
+    graph.add_edge('BD', 12)
+    graph.add_edge('FG', 4)
+    graph.add_edge('GH', 3)
+    graph.add_edge('HD', 10)
+    graph.add_edge('GE', 6)
+    graph.add_edge('HE', 3)
+
+    print dijkstra(graph, 'G')
+
+#print graph.nodes
+#print graph.edges.items()
+#print graph.distances
