@@ -1,6 +1,6 @@
 # Dijkstra's algorithm
 
-## Pseudocode
+## Pseudo Code
 
 ```
 function Dijkstra(Graph, source):
