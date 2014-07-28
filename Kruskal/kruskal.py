@@ -3,35 +3,46 @@
 
 def kruskal(G):
 
-    T = set()
-    d = {}
-    for v in G['vertices']:
-        d[v] = set([v])
+    MST = set()     # Create an empty set for the final minimum spanning tree
+    F = {}          # Create an empty dictionary for storing tree sets => an empty forest
+    
+    # In the beginning, make a set(tree) for each vertex of G,
+    # where each set(tree) is a single node tree
+    for v in G['vertices']:    
+        F[v] = set([v])
 
-    new_edges = sorted(list(G['edges']), key=lambda edge: edge[2])
-    #print d
-    #print new_edges
-    for e in new_edges:
-        v1 = e[0]
-        v2 = e[1]
-        i = find_set(d, v1)
-        j = find_set(d, v2)
-        if i != j:
-            union_set(d, i, j)
-            T.add(e)
-    print T
+    # Sort the edges of G in ascending order
+    edges = sorted(list(G['edges']), key=lambda edge: edge[2])
+    
+    for edge in edges:
+        v1 = edge[0]    # Vertex 1
+        v2 = edge[1]    # Vertex 2
+        i = find_set(F, v1)  # Find index of tree of vertex
+        j = find_set(F, v2)
+        if i != j:      # If v1 and v2 belong to different sets
+            union_set(F, i, j)
+            MST.add(edge)
+    
+    return MST
 
-def find_set(d, vertex):
-    for v, s in d.iteritems():
+def find_set(f, vertex):
+    """Find which set(tree) the vertex belongs to
+    
+    f(forest) is a dict which key as index and value as set(tree)
+    """
+    for k, s in f.iteritems():
         if vertex in s:
-            return v
+            return k
 
-def union_set(d, v1, v2):
-    set1 = d[v1]
-    set2 = d[v2]
-    del d[v1]
-    del d[v2]
-    d[v1] = set1 | set2
+def union_set(f, index1, index2):
+    """Union the two different sets
+
+    """
+    set1 = f[index1]
+    set2 = f[index2]
+    del f[index1]
+    del f[index2]
+    f[index1] = set1 | set2
 
 if __name__ == '__main__':
 
@@ -56,4 +67,6 @@ if __name__ == '__main__':
         ])
     }
 
-    kruskal(G)
+    edges = list(kruskal(G))
+    for e in edges:
+        print "Edge: ", e
