@@ -43,4 +43,5 @@ Step 5: Return MST
 ```
 
 ## Final result of the example
+![img](https://raw.github.com/yankuangshi/algorithms-training/master/Kruskal/img/screenshot5.png)
 ![img](https://raw.github.com/yankuangshi/algorithms-training/master/Kruskal/img/screenshot4.png)
